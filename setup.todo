@@ -6,3 +6,101 @@ for = htmlFor
 <br/>                <--- must close with /
 
 must return with a single parent element (a.k.a an encompassing div)
+
+GENERATE CLASS COMPONENT WITH rcc
+GENERATE FUNCTION COMPONENT WITH rfc
+IMPORT PROP TYPES WITH  impt
+
+
+================== JSX EXAMPLE ==============================
+
+class App extends Component {
+  render() {
+    const name = 'Larry';
+    const showHello = false;
+    const showMath = true;
+    let num1 = 45;
+    let num2 = 17;
+
+    let math;
+
+    if (showMath) {
+      math = (
+        <h2>
+          {num1} + {num2} = {num1 + num2}
+        </h2>
+      );
+    } else {
+      math = null;
+    }
+
+    return (
+      <div className='App'>
+        <h1>Hey there brown cow </h1>
+
+        {showHello ? <h3>Hello 1 + 1 = {1 + 1}</h3> : null}
+        {math}
+      </div>
+    );
+  }
+}
+
+
+===========FUNCTION COMPONENT========================
+const Header = () => {
+  return (
+    <div>
+      <h1>Contact Manager</h1>
+    </div>
+  );
+};
+
+export default Header;
+
+================== JSX EXAMPLE ==============================
+
+=================== PROP TYPES =============================
+todo: think of proptypes as validation!
+
+----------- default props ----------
+Header.defaultProps = {
+  branding: "My App is badass"
+};
+-----------------------------------
+
+
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+
+class Contact extends Component {
+  render() {
+    const { name, email, phone } = this.props;
+    return (
+      <div>
+        <h4>{name}</h4>
+        <ul>
+          <li>Email: {email}</li>
+          <li>Phone: {phone}</li>
+        </ul>
+      </div>
+    );
+  }
+}
+
+Contact.propTypes = {
+  name: PropTypes.string.isRequired,
+  Email: PropTypes.string.isRequired,
+  Phone: PropTypes.string.isRequired
+};
+export default Contact;
+
+===============STYLE==================
+----------IN LINE----------------
+const Header = props => {
+  const { branding } = props;
+  return (
+    <div>
+      <h1 style={{ color: "red", fontSize: "50px" }}>{branding}</h1>
+    </div>
+  );
+};
