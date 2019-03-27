@@ -1,0 +1,8 @@
+npm install -g create-react-app
+
+class = className
+for = htmlFor
+<input type="text"/> <--- must close with /
+<br/>                <--- must close with /
+
+must return with a single parent element (a.k.a an encompassing div)
