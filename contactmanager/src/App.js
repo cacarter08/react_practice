@@ -1,23 +1,18 @@
 import React, { Component } from "react";
 import "./App.css";
-import Contact from "./components/Contact";
+import Contacts from "./components/Contacts";
 import Header from "./components/Header";
+
+import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends Component {
   render() {
     return (
       <div className='App'>
         <Header />
-        <Contact
-          name='Corey Carter'
-          email='cc@gmail.com'
-          phone='910-222-3332'
-        />
-        <Contact
-          name='Jessica Carter'
-          email='jc@gmail.com'
-          phone='910-221-4432'
-        />
+        <div className='container'>
+          <Contacts />
+        </div>
       </div>
     );
   }

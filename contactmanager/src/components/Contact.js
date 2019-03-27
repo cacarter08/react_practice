@@ -3,13 +3,13 @@ import PropTypes from "prop-types";
 
 class Contact extends Component {
   render() {
-    const { name, email, phone } = this.props;
+    const { contact } = this.props;
     return (
-      <div>
-        <h4>{name}</h4>
-        <ul>
-          <li>Email: {email}</li>
-          <li>Phone: {phone}</li>
+      <div className='card card-body mb-3'>
+        <h4>{contact.name}</h4>
+        <ul className='list-group'>
+          <li className='list-group-item'>Email: {contact.email}</li>
+          <li className='list-group-item'>Phone: {contact.phone}</li>
         </ul>
       </div>
     );
@@ -17,8 +17,6 @@ class Contact extends Component {
 }
 
 Contact.propTypes = {
-  name: PropTypes.string.isRequired,
-  Email: PropTypes.string.isRequired,
-  Phone: PropTypes.string.isRequired
+  contact: PropTypes.string.isRequired
 };
 export default Contact;
