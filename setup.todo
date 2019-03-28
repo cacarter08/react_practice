@@ -104,3 +104,28 @@ const Header = props => {
     </div>
   );
 };
+
+TODO:When creating a function inside a class (above render) you dont use the `function`
+definition. For state, you need `onClick={this.functionName.bind(this)}`
+state = {} --- to set to empty state
+
+or create a constructor:
+
+constructor(){
+  super()
+  this.state = {};
+  this.onShowClick = this.onShowClick.bind(this);
+}
+
+ORRRRRRRRRRRRRRRRRRRRR, make it a function...
+
+onShowClick = () =>{
+    console.log(this.state);
+};
+
+  onShowClick = (name, email) => {
+    console.log(name + ' ' + email);
+  };
+to pass parameters to function use:
+
+ onClick={this.onShowClick.bind(this, contact.name, contact.email)}
